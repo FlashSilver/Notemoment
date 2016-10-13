@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 全局设置 */
+body{
+	font-size:30px;
+	margin:0px;
+	padding:0px;
+
+	background-color:#d3d4d4;
+	background-repeat:repeat-x;
+}
+
+a:link{
+	text-decoration:none;
+	color:#39F;
+}
+
+a:visited{
+	text-decoration:none;
+	color:#39F;
+}
+a:hover{
+	text-decoration:underline;
+	color:#36C;
+}
+
+.pay {
+	margin-left: 300px;
+    background-color: #3e8e41;
+    border: none;
+    color: white;
+	display: block;
+    text-align: center;
+    font-size: 16px;
+	height: 40px;
+	width: 100px;
+    cursor: pointer;
+
+}
+
+.closepay{
+	margin-top: 0px;
+	float: right;
+    margin-right: 300px;
+	background-color: #f50b0b;
+    border: none;
+	display: inline;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+	height: 40px;
+	width: 100px;
+    cursor: pointer;
+
+}
+
+.moneyamount{
+	display: inline;
+}
+
+.moneyinput{
+	font-size: 15px;
+	color:#000000;
+	margin-left: 10px;
+	margin-bottom: 40px;
+	height: 30px;
+	display: inline;
+	width: 80px;
+}

@@ -1,0 +1,192 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+                        <link href={% static "css/sty.css" %} type="text/css" rel="stylesheet" />
+
+        <link rel="stylesheet" href={% static "assets/css/styles.css" %} />
+
+
+{##}
+{#      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />#}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+		<link rel="stylesheet" href={% static "assets/css/bootstrap-material-datetimepicker.css" %} />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+		<script type="text/javascript" src={% static "assets/js/bootstrap-material-datetimepicker.js" %}></script>
+
+      <link rel="stylesheet" type="text/css" class="ui" href={% static "semantic/dist/semantic.css" %}>
+    <link rel="stylesheet" type="text/css" class="ui" href={% static "semantic/dist/semantic.min.css"%}>
+
+
+<!-- <script language="javascript" src="jquery.min.js"></script>
+ -->
+
+<style type="text/css">
+	body{
+		background: #d3d4d4;
+	}
+
+	.ui{
+		float: left;
+		margin-top: 50px;
+		margin-bottom: 50px;
+		margin-left: 95px;
+	}
+
+	.col-md-6{
+		float: left;
+		margin-top: 50px;
+	}
+	#date-format{
+		width: 300px;
+		height: 40px;
+	}
+{#.profile{#}
+{#  float: left;#}
+{#  height: 40px;#}
+{#    width: 40px;#}
+{#  padding-left: 5px;#}
+{#  padding-top: 10px;#}
+{#}#}
+{##}
+{#.item{#}
+{#  margin-top: 0px;#}
+{#  width: 150px;#}
+{#  height: 50px;#}
+{#}#}
+{# i.fa{#}
+{#       height: 40px;#}
+{#    width: 40px;#}
+{##}
+{#}#}
+</style>
+
+</head>
+
+
+<body>
+{% block content %}
+<script src={% static "semantic/dist/semantic.min.js" %}></script>
+
+<button class="buttonback"> Back</button>
+
+
+<select id="selector" class="ui search dropdown">
+  <option value="">Class Name</option>
+  <option value="AL">Alabama</option>
+  <option value="AK">Alaska</option>
+  <option value="AZ">Arizona</option>
+  <option value="AR">Arkansas</option>
+  <option value="CA">California</option>
+  <option value="CO">Colorado</option>
+  <option value="CT">Connecticut</option>
+  <option value="DE">Delaware</option>
+  <option value="DC">District Of Columbia</option>
+  <option value="FL">Florida</option>
+  <option value="GA">Georgia</option>
+  <option value="HI">Hawaii</option>
+  <option value="ID">Idaho</option>
+  <option value="IL">Illinois</option>
+  <option value="IN">Indiana</option>
+  <option value="IA">Iowa</option>
+  <option value="KS">Kansas</option>
+  <option value="KY">Kentucky</option>
+  <option value="LA">Louisiana</option>
+  <option value="ME">Maine</option>
+  <option value="MD">Maryland</option>
+  <option value="MA">Massachusetts</option>
+  <option value="MI">Michigan</option>
+  <option value="MN">Minnesota</option>
+  <option value="MS">Mississippi</option>
+  <option value="MO">Missouri</option>
+  <option value="MT">Montana</option>
+  <option value="NE">Nebraska</option>
+  <option value="NV">Nevada</option>
+  <option value="NH">New Hampshire</option>
+  <option value="NJ">New Jersey</option>
+
+</select>
+
+<div class="col-md-6">
+	<div class="form-control-wrapper">
+		<input type="text" id="date-format" class="form-control floating-label" placeholder="Class Time">
+	</div>
+</div>
+
+		<div id="dropbox">
+			<span class="message">Drop your notes here to upload(image only lol).</span>
+
+		</div>
+		
+	<button class="buttonpost">Yes, post them!</button>
+      	<button class="clear">Clear</button>
+
+        
+        <!-- Including The jQuery Library -->
+		
+		<!-- Including the HTML5 Uploader plugin -->
+		<script src={% static "assets/js/jquery.filedrop.js" %}></script>
+		
+		<!-- The main script file -->
+        <script src={% static "assets/js/script.js" %}></script>
+    <script>
+    $('.ui.dropdown').dropdown();
+
+
+    	$(document).ready(function()
+		{
+			$('#date').bootstrapMaterialDatePicker
+			({
+				time: false,
+				clearButton: true
+			});
+
+			$('#time').bootstrapMaterialDatePicker
+			({
+				date: false,
+				shortTime: false,
+				format: 'HH:mm'
+			});
+
+			$('#date-format').bootstrapMaterialDatePicker
+			({
+				format: 'dddd DD MMMM YYYY - HH:mm'
+			});
+			$('#date-fr').bootstrapMaterialDatePicker
+			({
+				format: 'DD/MM/YYYY HH:mm',
+				lang: 'fr',
+				weekStart: 1, 
+				cancelText : 'ANNULER',
+				nowButton : true,
+				switchOnClick : true
+			});
+
+			$('#date-end').bootstrapMaterialDatePicker
+			({
+				weekStart: 0, format: 'DD/MM/YYYY HH:mm'
+			});
+			$('#date-start').bootstrapMaterialDatePicker
+			({
+				weekStart: 0, format: 'DD/MM/YYYY HH:mm', shortTime : true
+			}).on('change', function(e, date)
+			{
+				$('#date-end').bootstrapMaterialDatePicker('setMinDate', date);
+			});
+
+			$('#min-date').bootstrapMaterialDatePicker({ format : 'DD/MM/YYYY HH:mm', minDate : new Date() });
+
+			$.material.init()
+		});
+</script>
+
+            {% endblock %}
+
+    </body>
+
+</html>
+

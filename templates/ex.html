@@ -1,0 +1,118 @@
+﻿{% include "topbar.html" %}
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Note Moment</title>
+
+
+  <style>
+
+
+      .report{
+          cursor: pointer;
+          float: right;
+          margin-right: 200px;
+          margin-top: 50px;
+			}
+
+  </style>
+
+
+         <link rel="stylesheet" href={% static "dialogcss/default.css" %}>
+        <link rel="stylesheet" href={% static "dialogcss/component.css" %}>
+
+    <link rel="stylesheet" href={% static "js/modernizr.custom.js" %}>
+</head>
+
+<body  id="totop">
+
+          {% block content %}
+
+
+             <div id="mainBannerTitle">
+
+            </div>
+
+       <div id="maincontainer">
+{% for foo in querydata %}
+
+            <div id="mainBannerContent" >
+
+            	<div id="second" class="stateShow" >
+                    <table id="firsttable" width="300" border="0" cellpadding="0" cellspacing="0" class="stateTable">
+                        <td width="80" align="center" valign="top">
+                        <img src={{ foo.avatar }} align="center" alt="" width="48" height="48"/> </td>
+                        <td><a href="#">{{ foo.nickname }}</a>
+
+                        <div class="post"><h6>{{ foo.posttime }}</h6>
+                        </div>
+
+                        </td>
+                    </table>
+
+                    <table class="notetitle" border="0">
+                    <tr>
+                        <td align="center" width="450"> {{ foo.notecls }}<ul class="docs-pictures">
+
+                    {%for eachimage in foo.notepic  %}
+                            {% if forloop.first %}
+                                 <li><img src={{ eachimage }} alt="{{ eachimage.index }}"></li>
+                            {% else %}
+                                 <li><img class='hide' src={{ eachimage }} alt="{{ eachimage.index }}"></li>
+                            {% endif %}
+                      {% endfor %}
+
+          </ul>  </td>
+                    </tr>
+                    <i class="fa fa-hand-o-left report" aria-hidden="true"> Report </i>
+                      </table>
+                 <div class="stateShowtime"><i class="fa fa-thumbs-up" aria-hidden="true"></i><p id="countr">{{ foo.likepeople|length }} people liked this note</p>  <div class="divider">  </div> <i id="heart" class="fa fa-heart" aria-hidden="true"></i><p class="favo" id="coltext">Favorite</p><div class="divider"></div><i class="fa fa-money md-trigger" data-modal="modal-3" aria-hidden="true"></i><p id="reward" style="display:inline-block;margin-left:10px;">Reward</p>  <div class="idhide"  id=“noteid”>{{ foo.noteid }}</div> <div class="texthide" id=“likepeople”>{{ foo.likepeople }}</div><div class="likehide">{{ foo.likepeople|length }}</div><div class="collhide">{{ foo.collectpeople }}</div>
+</div>
+
+                </div>
+
+
+
+
+
+
+{% endfor %}
+
+    <div class="md-modal md-effect-3" id="modal-3">
+              			        <div class="md-content" id="mdmd">
+				<h5>Reward {{ foo.nickname }}?</h5>
+				<div class="lower">
+
+					<p>Choose an amount to give:</p>
+                      <input id="dotfive" type="radio" name="money" value="0.5" checked> <h4 class="moneyamount">$0.5</h4><br>
+                      <input id="one" type="radio" name="money" value="1">  <h4 class="moneyamount">$1.0</h4><br>
+                      <input id="other" type="radio" name="money" value="other">  <h4 class="moneyamount">Ohter</h4><input class="moneyinput" type="input" >
+                      <button class="md-close closepay">Close</button>
+                      <form id="form1" target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                      <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="">
+                        <input type="hidden" name="item_name" value="hat">
+                        <input type="hidden" name="item_number" value="123">
+                        <input type="hidden" name="amount" value="0.0">
+                        <input type="submit" value="Confirm" name="submit" class="pay"></form>
+                    </div>
+                </div>
+    		</div>
+</div>
+
+
+
+
+            {% endblock %}
+		<script src={% static "js/classie.js" %}></script>
+		<script src={% static "js/modalEffects.js" %}></script>
+
+    <script>
+          var polyfilter_scriptpath = '/js/';
+</script>
+
+</body>
+
+</html>

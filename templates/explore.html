@@ -1,0 +1,115 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Note Moment</title>
+<link href={% static "bootstrap.css" %} type="text/css" rel="stylesheet" />
+<link href={% static "CustomerIndex.css" %} type="text/css" rel="stylesheet" />
+<link href={% static "global.css" %} type="text/css" rel="stylesheet" />
+
+ <link rel="stylesheet" href={% static "css/viewer.css" %}>
+
+
+<script language="javascript" src="jquery-1.6.2.min.js"></script>
+<script language="javascript" src="getnotes.js" ></script>
+<script src="https://use.fontawesome.com/cb68269df1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Note Moment</title>
+<style>
+input[type=text] {
+    position: absolute;
+    width: 300px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    margin-top: 10px;
+    right: 200px;
+/*    background-image: url('searchicon.png');
+*/    background-position: 10px 10px;
+    background-repeat: no-repeat;
+}
+
+    li{
+        margin-top: 1px;
+        right: 0px;
+
+}
+</style>
+
+</head>
+<body id="totop">
+<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <div class="navbar-header">
+                <a class="navbar-brand topnav" href="#"><strong>UCI Note Moment</strong></a>
+
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="tologin"><a href="#contact">Login</a></li>
+                    <input type="text" name="search" placeholder="Search..">
+
+                </ul>
+
+        </div>
+    </nav>
+
+
+                        <div id="mainBannerTitle">
+
+            </div>
+
+
+
+   <div id="mainBannerTitle">
+
+            </div>
+
+{% for foo in querydata %}
+
+
+
+            <div id="mainBannerContent" >
+            	<div id="second" class="stateShow" >
+                  <div id="third" class="stateShowWord">
+                    <table id="firsttable" width="300" border="0" cellpadding="1" cellspacing="0" class="stateTable">
+                        <td width="80" align="center" valign="top">
+                        <img src={{ foo.avatar }} align="center" alt="" width="65" height="65"/> </td>
+                        <td><a href="#">{{ foo.nickname }}</a>
+                        <div class="post"><h6>{{ foo.posttime }}</h6>
+                        </div>
+                        </td>
+                    </table>
+
+                    <table class="notetitle" border="0">
+                        <td align="center" width="450"> {{ foo.notecls }}<img src={{ foo.cover }} style="border:none;" width="450"/> </td>
+                      </table>
+                  </div>
+
+                 <div class="likepeople"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> {{ foo.likepeople|length }} people liked this note</div>
+
+                </div>
+
+
+{% endfor %}
+
+
+
+{##}
+{#{% for foo in querydata %}#}
+{# {{ foo.posttime}}#}
+{#{% endfor %}#}
+{##}
+
+  <script src={% static "js/jquery.min.js" %}></script>
+  <script src={% static "js/main.js" %}></script>
+    <script src={% static "js/viewer.js" %}></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+ <link rel="stylesheet" type="text/css" class="ui" href={% static "semantic/dist/semantic.css" %}>
+    <link rel="stylesheet" type="text/css" class="ui" href={% static "semantic/dist/semantic.min.css"%}>
+    <link href={% static "bootstrap.css" %} type="text/css" rel="stylesheet" />
+<link href={% static "CustomerIndex.css" %} type="text/css" rel="stylesheet" />
+<link href={% static "css/sty.css" %} type="text/css" rel="stylesheet" />
+<link href={% static "global.css" %} type="text/css" rel="stylesheet" />
+
+ <link rel="stylesheet" href={% static "css/viewer.css" %}>
+
+
+ <link rel="stylesheet" href={% static "css/dialog-don.css" %}>
+ <link rel="stylesheet" href={% static "css/dialog.css" %}>
+
+    <link rel="stylesheet" href={% static "js/modernizr.custom.js" %}>
+
+<!-- <script language="javascript" src="CustomerIndex.js" ></script>
+ --><script language="javascript" src="jquery-1.6.2.min.js"></script>
+<script src="https://use.fontawesome.com/cb68269df1.js"></script>
+
+    <script src={% static "js/modernizr.custom.js" %} ></script>
+
+
+
+    <meta charset="UTF-8">
+    <title></title>
+<style>
+
+</style>
+
+
+      <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#"><strong>UCI Note Moment</strong></a>
+
+
+            </div>
+
+<div class="dropdown">
+  <button class="dropbtn"><i class="fa fa-user" aria-hidden="true"></i>
+        <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+
+  <div id="myDropdown" class="dropdown-content">
+  <div class="user"><a href="http://www.notemoment.tech/weblogin" class="one"><div><td><i class="fa fa-sign-in loginlink" aria-hidden="true"></i><h6 class="userstate">Log In</h6></td></div></a>
+
+  <a href="" class="one"><div><td><i class="fa fa-registered loginlink" aria-hidden="false"></i><h6 class="userstate1">Sign up</h6></td></div></a>
+</div>
+</div>
+
+<div id="dialog" class="dropdown-content">
+<div class="item"><img id="avatar" class="profile" src="http://arroyo.oss-us-west-1.aliyuncs.com/gguggIMG_20160610_143603.jpg" width="40" height="40"/><h6 id="nickname" class="name">Silver</h6></div>
+<div class="item"><i class="fa fa-history profile" aria-hidden="true" ></i><h6 class="name">My uploads</h6></div>
+<div class="item"><i class="fa fa-gratipay profile" aria-hidden="true"></i><h6 class="name">My favorites</h6></div>
+<div id="signout" class="item"><i class="fa fa-sign-out profile" aria-hidden="true"></i><h6 class="name">Sign out</h6></div>
+</div>
+
+</div>
+
+
+
+<div id="classdropdown" class="dropdown">
+  <div class="dropbtn"><td><h4 class="classbutton"></h4><i class="classlist fa fa-caret-down" aria-hidden="true"></i></td></div>
+<div id="classname" class="dropdown-content">
+
+</div>
+</div>
+
+<div class="upload" target="_blank">Post</div>
+
+<div></div>
+
+</div>
+    </nav>
+
+        <script src={% static "js/jquery.min.js" %}></script>
+    <script src={% static "js/main.js" %}></script>
+    <script src={% static "js/viewer.js" %}></script>
+    <script src={% static "js/jquery.cookie.js" %}></script>
+
+</head>
+
+
+
+<body >
+
+    <script src={% static "js/classie.js" %}></script>
+
+</body>
+</html>

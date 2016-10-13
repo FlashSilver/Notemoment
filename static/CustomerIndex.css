@@ -1,0 +1,185 @@
+/*/*/*@charset "utf-8";
+/* CSS Document */
+
+/* 总容器 container */
+#container{
+	width:765px;
+	height:auto;
+	margin:0px auto;
+}
+	/* 回到顶部 */
+	#backtop {
+		position:fixed;
+		bottom: 0px;
+		right:0px;
+	}
+
+.tologin{
+	float: right;
+	position: absolute;
+	right: 10px;
+}
+
+	/* 回到顶部样式 */
+	#backtop a {
+		width: 60px;
+		display: block;
+		text-align: center;
+		font-size:11px;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #bbb;
+		/* 背景颜色过渡 */
+		-webkit-transition: 1s;
+		-moz-transition: 1s;
+		transition: 1s;
+	}
+
+
+				#mainBannerTitle{
+			width:1200px;
+			padding:0px;
+			margin:0px;
+			height:40px;
+			position:relative;
+			border: 0px;
+			}
+			/*首页提示与隐藏*/
+		    #mainBannerTitleWord{
+			    width:32px;
+			    height:15px;
+			    font-size:15px;
+			    padding:0px;
+			    margin:0px;
+			    position:absolute;
+				top:29px;
+				left:20px;
+			    }	
+			/*首页提示与隐藏*/	
+			#mainBannerTitleWord2{
+				width:80px;
+				height:20px;
+				padding:0px;
+				margin:0px;
+				left:473px;
+				top:32px;
+				position:absolute;
+				display:none;
+				}		
+	      /*不同人的微博内容*/
+	      #mainBannerContent{
+				  width:1000px;
+				  height:auto;
+				  margin:0px auto;
+				  margin-top:5px;
+				  position:relative;
+			  }
+			  /* 状态DIV设置 */
+			 #mainBannerContent .stateShow{
+			 	background: #FFFFFF;
+				
+				height:auto;
+				width: 800px;
+				padding-top:10px;
+				margin:10px;
+				margin-top: 20px;
+				border-bottom:1px;
+				padding-left: 40px;
+				padding-bottom:10px;
+			}
+			/* 回复DIV设置 */
+			#mainBannerContent .stateRshow{
+				background: #FFFFFF
+
+				width:600px;
+				height:auto;
+				padding-top:5px;
+				margin:0px auto;
+				border-bottom:1px #ccc dotted;
+				padding-bottom:5px;
+			}
+
+	#mainBannerContent .post{
+				font-family: "Comic Sans MS";
+				padding-top: 2px;
+				font-size: 300%;
+			}
+			
+		/* 状态展示中的头像设置 */
+		#mainBannerContent img{
+			margin-top:3px;
+			border:2px solid #ccc;
+		}
+		/* 状态展示中的链接设置*/
+		#mainBannerContent td a:link{
+			margin: 3px;
+			color:#005dc3;
+			text-decoration:none;
+			font-weight:bold;
+		}
+
+		#posttime div a:link{
+			margin: 3px;
+			color:#005dc3;
+			text-decoration:none;
+			font-weight:bold;
+
+		}
+		/* 状态中链接的样式 */
+		#mainBannerContent td a:hover{
+			margin: 3px;
+
+			color:#005dc3;
+			text-decoration:underline;
+			font-weight:bold;			
+		}
+		#mainBannerContent td a:visited{
+			margin: 3px;
+			color:#005dc3;
+			text-decoration:none;
+			font-weight:bold;			
+		}
+		/* 状态展示里面的图片显示 */
+		
+		/* 状态展示时间框设置 */
+		#mainBannerContent .likepeople{
+			margin-top:10px;
+			margin-left:0px;
+			padding-left:0px;
+			color:#000000;
+			/*display:inline;*/
+		}
+			#mainBannerContent .stateShowWord{
+				width:1px;
+
+			}
+			/* 状态展示中的回复部分 */
+			#mainBannerContent .stateRshowWord{
+				width:380px;
+			}
+
+		/*  mainRightFirstLineWord2 ul格式 */
+				#mainRightPostionFirstLineWord2 ul{
+					list-style:none;
+					margin:0px;
+					padding:0px;
+				}
+				/*  mainRightFirstLineWord2 li格式 */
+				#mainRightPostionFirstLineWord2 ul li{
+	margin:0px 15px;
+	float:left;
+				}					
+			/* 右侧内部第二行容器 mainRightPostionSecondLine DIV */ 
+			#mainRightPostionSecondLine{
+				width:200px;
+				padding:0px;
+				margin:0px;
+				border:0px;
+				height:184px;
+				background-color:#E9F4FA;				
+				border-bottom:1px solid #A6D3E3;
+			}
+
+
+
+*/*/*/
