@@ -16,10 +16,10 @@ from django.shortcuts import render_to_response
 import model
 
 
-endpoint='http://oss-us-west-1.aliyuncs.com'
-ali='http://arroyo.oss-us-west-1.aliyuncs.com/'
-auth = oss2.Auth('h9p8vicTD1xAplNn', 'symR186PUptAyQJnF0sKFNeHtGD2jl')
-bucket = oss2.Bucket(auth, endpoint, 'arroyo')
+# endpoint=''
+# ali=''
+# auth = oss2.Auth('', '')
+# bucket = oss2.Bucket(auth, endpoint, 'arroyo')
 
 myname = socket.getfqdn(socket.gethostname(  ))
 myaddr = socket.gethostbyname(myname)
