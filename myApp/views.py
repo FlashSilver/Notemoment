@@ -15,7 +15,11 @@ from sqlite3 import OperationalError
 from django.shortcuts import render_to_response
 import model
 
+import boto3
 
+s3 = boto3.resource('s3')
+
+bucket = s3.Bucket('name')
 # endpoint=''
 # ali=''
 # auth = oss2.Auth('', '')
@@ -144,7 +148,8 @@ def postnotes(request):
         allfiles=''
         for note in notepic:  
             file_name =userid+note.name
-            bucket.put_object(file_name, note)
+            bucket.put_object(Key=file_name, Body=note)
+#             bucket.put_object(file_name, note)
             allfiles=allfiles+ali+file_name+','
         allfiles=allfiles[:-1]
         if len(notepic)>1:
